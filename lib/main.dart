@@ -1,16 +1,20 @@
 import 'package:flavor_demo/home_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'app_config.dart';
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var config = AppConfig.of(context);
+    return _widgetBuildApp(config);
+  }
+
+  MaterialApp _widgetBuildApp(AppConfig config) {
     return MaterialApp(
-      title: 'Flavors Example',
+      title: config.appDisplayName,
       theme: ThemeData(
         // This is the theme of your application.
         //
